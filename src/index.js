@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './styles/index.scss';
+import firebase from 'firebase/compat/app'
+import Initialize from './initialize';
 import reportWebVitals from './reportWebVitals';
+import firebaseConfig from './api/apikeys';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Initialize />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
