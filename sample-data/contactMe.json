@@ -1,9 +1,10 @@
 {
-    "contact": {
-        "firebaseKey": "123",
+    "-Motj7JFW5x5xsDhuo9V": {
+        "firebaseKey": "-Motj7JFW5x5xsDhuo9V",
         "email": "klaythacker11@gmail.com",
         "uid": "1234",
         "name": "Klay",
-        "message": "A big ole message"
+        "message": "A big ole message",
+        "urgent": false
     }
 }
