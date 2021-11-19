@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Navbar from '../components/Navbar';
+import RoutePaths from '../routes/Routes';
 
 function Initialize() {
     
@@ -8,6 +9,7 @@ function Initialize() {
     <div>
       <>
       <Navbar />
+      <RoutePaths />
       </>
     </div>
   );

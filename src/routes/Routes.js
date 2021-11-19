@@ -1,15 +1,19 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import About from '../views/About';
+import Contact from '../views/Contact';
+import Home from '../views/Home';
+import Projects from '../views/Projects';
 
-export default function Routes() {
+export default function RoutePaths() {
     return (
         <>
-            <Switch>
-                <Route exact path="/" />
-                <Route exact path="/about" />
-                <Route exact path="/contact" />
-                <Route exact path="/projects" />
-            </Switch>  
+            <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/about" element={<About />} />
+                <Route exact path="/contact" element={<Contact />} />
+                <Route exact path="/projects" element={<Projects />} />
+            </Routes>  
         </>
     )
 }
