@@ -8,7 +8,6 @@ const initialState = {
     uid: '',
     name: '',
     message: '',
-    urgent: false,
 };
 
 export default function ContactMeForm({ obj }) {
@@ -23,14 +22,6 @@ export default function ContactMeForm({ obj }) {
             }
         }, [obj]);
 
-        const handleChecked = (e) => {
-            const { name, checked } = e.target;
-            setFormInput((prevState) => ({
-                ...prevState,
-                [name]: checked,
-            }))
-        }
-
         const handleChange = (e) => {
             const { name, value } = e.target;
 
@@ -40,46 +31,34 @@ export default function ContactMeForm({ obj }) {
             }));
         };
 
-        const resetForm = () => {
-            setFormInput(initialState);
-        };
+        // const resetForm = () => {
+        //     setFormInput(initialState);
+        // };
 
-        const handleSubmit = (e) => {
-            e.preventDefualt();
+        const handleSubmit = () => {
+            // e.preventDefualt();
+
             if (obj) { createMessage({ ...formInput }).then(() => {
-                resetForm();
+                // resetForm();
+                console.warn(obj);
                 });
             }
         };
-
-        console.warn(obj);
 
         return (
             <>
               <div
                 className="card text-center"
-                style={{
-                  background: 'white',
-                  width: '40rem',
-                  justifyContent: 'center',
-                  border: '2px solid black',
-                }}
               >
-                <h2 className="card-header" style={{ border: '2px solid black' }}>
+                <h2 className="card-header">
                   Hello
                 </h2>
                 <div
                   className="card-body"
-                  style={{ justifyContent: 'space-between', border: '2px solid black' }}
                 >
                   <h5 className="card-title">Leave a Message</h5>
                   <form onSubmit={handleSubmit}>
                     <input
-                      style={{
-                        border: '2px solid black',
-                        height: '2.5rem',
-                        width: '30rem',
-                      }}
                       id="email"
                       name="email"
                       value={formInput.email}
@@ -89,11 +68,6 @@ export default function ContactMeForm({ obj }) {
                     />
                     <p />
                     <input
-                      style={{
-                        border: '2px solid black',
-                        height: '2.5rem',
-                        width: '30rem',
-                      }}
                       id="name"
                       name="name"
                       value={formInput.name}
@@ -102,12 +76,7 @@ export default function ContactMeForm({ obj }) {
                       placeholder="Your Name"
                     />
                     <p />
-                    <input
-                      style={{
-                        border: '2px solid black',
-                        height: '2.5rem',
-                        width: '30rem',
-                      }}
+                    <input 
                       id="message"
                       name="message"
                       value={formInput.message}
@@ -115,28 +84,10 @@ export default function ContactMeForm({ obj }) {
                       required
                       placeholder="Your Message"
                     />
-                    <div className="form-check">
-                      <label className="form-check-label" htmlFor="urgent">
-                        <input
-                          name="urgentMessage"
-                          type="checkbox"
-                          className="form-check-input"
-                          id="urgent"
-                          checked={formInput.favoriteItem}
-                          onChange={handleChecked}
-                        />
-                        Is this a Urgent Message?
-                      </label>
-                    </div>
                     <p />
                     <button
                       type="submit"
                       className="btn btn-info"
-                      style={{
-                        border: '2px solid black',
-                        height: '2.5rem',
-                        marginTop: '3px',
-                      }}
                     >
                       Send
                     </button>
@@ -144,7 +95,6 @@ export default function ContactMeForm({ obj }) {
                 </div>
                 <div
                   className="card-footer text-muted"
-                  style={{ border: '2px solid black' }}
                 >
                   Have a good day!
                 </div>
