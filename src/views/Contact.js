@@ -3,7 +3,7 @@ import ContactMeForm from '../components/ContactMeForm'
 
 export default function Contact() {
     return (
-        <div>
+        <div className="card-new-page">
             <ContactMeForm />
         </div>
     )
