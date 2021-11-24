@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { signInUser, signOutUser } from '../api/auth';
 
 export default function Navbar() {
     return (
@@ -29,6 +30,36 @@ export default function Navbar() {
                                             >
                                                 Projects
                                                 </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" aria-current="page" to="/messages"
+                                            >
+                                                Messages
+                                                </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <Link className="nav-link" aria-current="page" to="/projectform"
+                                            >
+                                                Project form
+                                                </Link>
+                                        </li>
+                                        <li className="nav-item">
+                                            <button
+                                            onClick={signInUser}
+                                            type="button"
+                                            className="btn btn-danger border border-dark"
+                                            >
+                                                Log In
+                                                </button>
+                                        </li>
+                                        <li className="nav-item">
+                                            <button
+                                            onClick={signOutUser}
+                                            type="button"
+                                            className="btn btn-danger border border-dark"
+                                            >
+                                                Log Out
+                                                </button>
                                         </li>
                                     </ul>
                                 </div>

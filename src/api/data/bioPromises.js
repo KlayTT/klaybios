@@ -23,7 +23,15 @@ const createMessage = (obj) => new Promise((resolve, reject) => {
         }).catch(reject);
 });
 
+const deleteMessage = (firebaseKey) => new Promise((resolve, reject) => {
+    axios
+        .delete(`${baseURL}/contactMe/${firebaseKey}.json`)
+        .then(() => getMessage().then(resolve))
+        .catch(reject);
+});
+
 export {
     getMessage,
     createMessage,
+    deleteMessage,
 };

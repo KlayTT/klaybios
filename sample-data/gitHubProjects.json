@@ -1,6 +1,10 @@
 {
-    "gitHubProject1": {
-        "name": "gh pj 1",
-        "link": "link"
-    }
+  "-MpERzGDoNUzs_saBrmL" : {
+    "contributers" : "Grace Sutherland, Derek Baylor, Ruby Kaur",
+    "depolyLink" : "https://github.com/nss-evening-cohort-16/hip-hop-pizza-and-wangs-java-souls",
+    "firebaseKey" : "-MpERzGDoNUzs_saBrmL",
+    "githubLink" : "https://github.com/nss-evening-cohort-16/hip-hop-pizza-and-wangs-java-souls",
+    "projectDescription" : "This app is for a Ma and Pa restaurant named Hip, Hop, Pizza, and Wangs. Their concept is a crossroads of music and food and since the 2020 pandemic they needed to change their business model to accommodate and influx of call in and online orders. That’s where this app comes in! It is a point of sale application that will help keep track of their orders.",
+    "projectName" : "Hip Hop Pizza and Wangz"
+  }
 }
