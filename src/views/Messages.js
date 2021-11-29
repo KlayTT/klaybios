@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Messages from '../components/Messages';
 import { getMessage } from '../api/data/bioPromises';
 
@@ -19,5 +20,13 @@ export default function MessagesView() {
         />
       ))}
     </div>
-  );
+  )
 }
+
+MessagesView.propTypes = {
+  admin: PropTypes.shape(PropTypes.obj)
+};
+
+MessagesView.defualtProps = {
+  admin: null,
+};
