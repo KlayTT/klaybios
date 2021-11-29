@@ -1,4 +1,5 @@
 import React, { useEffect, useState }  from 'react'
+import PropTypes from 'prop-types';
 import Projects from '../components/Projects'
 import { getProject } from '../api/data/bioProjectsProm'
 
@@ -21,3 +22,11 @@ export default function ProjectsView() {
     </div>
     )
 }
+
+ProjectsView.propTypes = {
+  admin: PropTypes.shape(PropTypes.obj)
+};
+
+ProjectsView.defualtProps = {
+  admin: null,
+};

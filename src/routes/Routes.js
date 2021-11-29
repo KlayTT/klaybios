@@ -1,23 +1,22 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom';
-import About from '../views/About';
-import Contact from '../views/Contact';
-import Home from '../views/Home';
-import Messages from '../views/Messages';
-import ProjectFormView from '../views/ProjectFormView';
-import ProjectsView from '../views/Projects';
+import PropTypes from 'prop-types';
+import AdminRoutes from './AdminRoutes';
+import UserRoutes from './UserRoutes';
 
-export default function RoutePaths() {
+
+export default function RoutePaths({ admin }) {
     return (
         <>
-            <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/about" element={<About />} />
-                <Route exact path="/contact" element={<Contact />} />
-                <Route exact path="/projects" element={<ProjectsView />} />
-                <Route exact path="/messages" element={<Messages />} />
-                <Route exact path="/projectform" element={<ProjectFormView />} />
-            </Routes>  
+            { admin ? <AdminRoutes admin={admin} /> : ''}
+            <UserRoutes />
         </>
-    )
+    );
 }
+
+RoutePaths.propTypes = {
+    admin: PropTypes.shape(PropTypes.obj),
+};
+
+RoutePaths.defualtProps = {
+    admin: null,
+};
