@@ -1,5 +1,6 @@
 import React, { useEffect, useState }  from 'react';
 import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 import Navbar from '../components/Navbar';
 import RoutePaths from '../routes/Routes';
 import firebaseConfig from '../api/apikeys';
